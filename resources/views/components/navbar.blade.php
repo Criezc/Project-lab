@@ -18,7 +18,7 @@
                     Movies
                 </li>
                 <li>
-                    Actors
+                    <a href="/actors">Actors</a>
                 </li>
                 <button class="px-3 py-2 bg-blue-600 rounded-sm">
                     Register
