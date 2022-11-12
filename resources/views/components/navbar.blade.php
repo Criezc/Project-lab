@@ -1,4 +1,4 @@
-<div class="bg-gray-900">
+<div class="bg-primaryBlack">
     {{-- navbar --}}
 
     <nav class="w-full container mx-auto p-8 flex flex-row justify-between items-center">
@@ -20,12 +20,16 @@
                 <li>
                     <a href="/actors">Actors</a>
                 </li>
-                <button class="px-3 py-2 bg-blue-600 rounded-sm">
-                    Register
-                </button>
-                <button class="px-3 py-2 border border-blue-600 rounded-sm text-blue-600">
-                    Login
-                </button>
+                <a href="/register">
+                    <button class="px-3 py-2 bg-blue-600 rounded-sm">
+                        Register
+                    </button>
+                </a>
+                <a href="/login">
+                    <button class="px-3 py-2 border border-blue-600 rounded-sm text-blue-600">
+                        Login
+                    </button>
+                </a>
             </ul>
         </div>
 

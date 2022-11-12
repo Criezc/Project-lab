@@ -1,4 +1,4 @@
-<div class="bg-gray-900">
+<div class="bg-primaryBlack">
 
     <footer class="container mx-auto w-full p-8 flex justify-center items-center">
 

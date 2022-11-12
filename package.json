@@ -6,7 +6,7 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-        "*.php": "php ./vendor/bin/php-cs-fixer fix "
+        "*.php": "php ./vendor/bin/php-cs-fixer fix"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.13",
