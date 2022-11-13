@@ -21,7 +21,7 @@ return new class extends Migration
             // 0 user 1 admin
             $table->integer('role')->default(0);
             $table->rememberToken();
-            $table->timestamp('created_at')->default(date("Y-m-d H:i:s"));
+            $table->timestamps();
         });
     }
 

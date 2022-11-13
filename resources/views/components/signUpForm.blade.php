@@ -9,7 +9,13 @@
     </div>
 
     <div class="flex flex-col justify-center items-center max-w-lg mx-auto mt-10">
-        <form action="" class="flex flex-col justify-center w-full space-y-5">
+        @if ($errors->any())
+            @foreach ($errors->all() as $err)
+                <p class="text-green-500 text-xl">{{ $err }}</p>
+            @endforeach
+        @endif
+        <form action="{{ route('register.action') }}" method="POST" class="flex flex-col justify-center w-full space-y-5">
+            @csrf
             <div
                 class="flex justify-center w-full text-white px-5 py-3 rounded-xl bg-primaryBlack focus-within:ring-1 ring-red-600">
                 <label for="" class="w-1/2">Username</label>
@@ -32,7 +38,7 @@
             <div
                 class="flex justify-center w-full text-white px-5 py-3 rounded-xl bg-primaryBlack focus-within:ring-1 ring-red-600">
                 <label for="" class="w-1/2">Password</label>
-                <input type="password" name="confirmPassword" class="w-full outline-none border-none bg-transparent"
+                <input type="password" name="password_confirm" class="w-full outline-none border-none bg-transparent"
                     placeholder="Enter your confirm password" />
             </div>
 

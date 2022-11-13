@@ -71,11 +71,11 @@ return [
 
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\MovieAdmin::class
+            'model' => App\Models\User::class
         ],
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\MovieUser::class
+            'model' => App\Models\User::class
         ]
 
         // 'users' => [
