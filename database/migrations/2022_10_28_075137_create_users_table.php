@@ -22,6 +22,9 @@ return new class extends Migration
             $table->integer('role')->default(0);
             $table->rememberToken();
             $table->timestamps();
+            $table->string('phone')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('image')->nullable();
         });
     }
 

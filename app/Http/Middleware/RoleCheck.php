@@ -15,11 +15,11 @@ class RoleCheck
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle($request, Closure $next, ... $role)
+    public function handle($request, Closure $next, ...$role)
     {
         $user = Auth::user();
 
-        if($user->role == $role)
+        if ($user->role == $role)
             return $next($request);
 
         return redirect('/');

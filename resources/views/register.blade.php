@@ -7,5 +7,5 @@
 @endsection
 
 @section('content')
-    <x-signUpForm />
+    <x-form.signUpForm />
 @endsection

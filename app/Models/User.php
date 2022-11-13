@@ -16,7 +16,8 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'role'
+        'role',
+        'image'
     ];
 
     protected $secured = [
@@ -24,7 +25,18 @@ class User extends Authenticatable
         'remember_token'
     ];
 
-    public function watchlists() {
+    public function isAdmin()
+    {
+        return $this->role == 1;
+    }
+
+    public function nonAdmin()
+    {
+        return $this->role == 0;
+    }
+
+    public function watchlists()
+    {
         return $this->hasMany(Watchlist::class, 'foreign_key');
     }
 }

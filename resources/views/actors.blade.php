@@ -8,18 +8,18 @@
 
 @section('content')
     <div class="top flex flex-row justify-between items-center">
-        <div class="title">
+        <div class="title w-full">
             <h1 class="text-3xl text-red-500 font-bold">Actors</h1>
         </div>
-        <div class="actions flex flex-row w-1/3 justify-between items-center">
-            <div class="searchbar w-2/3 mr-2">
+        <div class="actions flex flex-row max-w-sm w-full justify-between items-center">
+            <div class="searchbar w-full mr-2 ">
                 <input class="bg-gray-800 w-full px-4 py-2 rounded-lg" type="text" placeholder="Search Actor Address">
             </div>
-            {{-- @if (Auth::user()->role() == 1) --}}
-            <div class="add-actor w-1/3">
-                <button class="bg-red-500 w-full text-white px-2 py-2 rounded-sm">Add Actor</button>
-            </div>
-            {{-- @endif --}}
+            @if (Auth::check() && Auth::user()->isAdmin())
+                <div class="add-actor w-1/3">
+                    <button class="bg-red-500 w-full text-white px-2 py-2 rounded-sm">Add Actor</button>
+                </div>
+            @endif
         </div>
     </div>
     <div class="content">

@@ -17,8 +17,10 @@ class UserController extends Controller
             'password' => 'required'
         ]);
 
+        $rememberToken = $request->has('remember_token') ? true : false;
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $rememberToken)) {
             $request->session()->regenerate();
             return redirect()->intended('/')->with('success', 'login complete');
         }
@@ -48,10 +50,33 @@ class UserController extends Controller
         return redirect()->intended('/login')->with('sucess', 'Registration complted.');
     }
 
+    public function update_profile(Request $request)
+    {
+        $request->validate([
+            'username' => 'required',
+            'email' => 'required | email',
+            'dob' => 'date',
+            'phone' => 'required|min:3|max:15',
+        ]);
+        $user = User::find(Auth::id());
+
+        $user->username = $request->username;
+        $user->email =  $request->email;
+
+        $user->dob = $request->dateOfBirth;
+        $user->phone = $request->phone;
+
+        $user->save();
+
+        $request->session()->regenerate();
+
+        return back()->with('success', 'Profile updated!');
+    }
+
     public function logout(Request $request)
     {
         Auth::logout();
-        $request->session_destroy();
+        $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
     }

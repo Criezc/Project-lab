@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .inputWrapper {
+        @apply flex justify-center w-full text-white px-5 py-3 rounded-sm bg-primaryBlack focus-within:ring-1 ring-red-600;
+    }
+
+    .buttonBase {
+        @apply text-white outline-none border-none bg-red-600 w-full px-5 py-1 rounded-xl  hover:-translate-y-1 transition duration-150 ease-in cursor-pointer flex justify-center items-center;
+    }
+
+    .navButton {
+        @apply px-3 py-2 border border-blue-600 rounded-sm text-blue-600 outline-none hover:-translate-y-2 transition duration-100 ease-linear;
+    }
+}

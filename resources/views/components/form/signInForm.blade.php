@@ -29,13 +29,12 @@
                     placeholder="Enter your password" />
             </div>
             <div class="inline-flex space-x-2">
-                <input type="checkbox" name="remember" id="remember" />
-                <label for="" class="text-white">Remember me</label>
+                <input type="checkbox" name="remember_token" value="1" id="remember" />
+                <label class="text-white">Remember me</label>
             </div>
 
             <div class="flex justify-center w-full flex-col items-center space-y-5">
-                <button type="submit"
-                    class="text-white bg-red-600 w-full px-5 py-1 rounded-xl  hover:-translate-y-1 transition duration-150 ease-in cursor-pointer justify-center items-center flex">
+                <button type="submit" class="buttonBase">
                     Login
                     <x-maki-arrow class="ml-1 w-4 text-white flex justify-center items-center" />
                 </button>

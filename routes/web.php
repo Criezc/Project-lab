@@ -34,3 +34,11 @@ Route::get('/register', function () {
 });
 
 Route::post('register', [UserController::class, 'register_action'])->name('register.action');
+
+Route::post('/profile', [UserController::class, 'update_profile'])->name('update.profile');
+
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/profile', function () {
+    return view('profile');
+});
