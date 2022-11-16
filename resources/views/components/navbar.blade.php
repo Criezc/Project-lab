@@ -21,9 +21,13 @@
                         Movies
                     </a>
                 </li>
-                <li>
-                    <a href="/actors" class="text-white hover:underline">Actors</a>
-                </li>
+
+                @if (Auth::check() && Auth::user()->isAdmin())
+                    <li>
+                        <a href="/actors" class="text-white hover:underline">Actors</a>
+                    </li>
+                @endif
+
                 @if (Auth::guest())
                     <a href="/register">
                         <button class="navButton bg-blue-600 border-none text-white">

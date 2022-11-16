@@ -52,7 +52,7 @@
 
         @if (Auth::check() && Auth::user()->isAdmin())
             <div class="w-full flex justify-end items-end">
-                <a href=""
+                <a href="/addMovie"
                     class="inline-flex items-center bg-red-500 px-5 py-2 rounded-lg hover:-translate-y-2 duration-100 transition ease-out text-white font-semibold">
                     <x-eos-add class="w-4" />
                     Add Movie

@@ -19,10 +19,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/actors', function () {
-    return view('actors');
-});
-
 Route::get('/login', function () {
     return view('login');
 });
@@ -41,4 +37,14 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/profile', function () {
     return view('profile');
+});
+
+
+//admin router
+
+Route::get('/actors', [UserController::class, 'actor_get'])->middleware('roleCheck');
+
+Route::group(['middleware' => 'roleCheck'], function () {
+    Route::get('/actors', [UserController::class, 'actors_page']);
+    Route::get('/addMovie', [UserController::class, 'movie_page']);
 });

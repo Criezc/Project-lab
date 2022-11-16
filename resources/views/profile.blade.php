@@ -25,7 +25,14 @@
                     Profile
                 </h1>
 
-                <x-heroicon-s-user-circle class="w-[100px] text-white" />
+
+
+                @if (Auth::user()->image)
+                    <img src="{{ asset('storages/images/' . Auth::user()->image) }}" />
+                @else
+                    <x-heroicon-s-user-circle class="w-[100px] text-white" />
+                @endif
+
 
                 <div class="flex justify-center">
                     <h1 class="text-white text-2xl">
