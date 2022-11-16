@@ -42,8 +42,6 @@ Route::get('/profile', function () {
 
 //admin router
 
-Route::get('/actors', [UserController::class, 'actor_get'])->middleware('roleCheck');
-
 Route::group(['middleware' => 'roleCheck'], function () {
     Route::get('/actors', [UserController::class, 'actors_page']);
     Route::get('/addMovie', [UserController::class, 'movie_page']);
